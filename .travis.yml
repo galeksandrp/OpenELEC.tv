@@ -7,6 +7,7 @@ addons:
     - texinfo
     - lzop
     - xsltproc
+    - libxml-parser-perl
 script:
 - yes no | sudo dpkg-reconfigure dash
 - PROJECT=RPi ARCH=arm make image
