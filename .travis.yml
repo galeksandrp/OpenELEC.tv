@@ -10,6 +10,7 @@ addons:
     - libxml-parser-perl
 script:
 - yes no | sudo dpkg-reconfigure dash
+- travis_wait 120 sleep infinity &
 - PROJECT=RPi ARCH=arm make image > /tmp/log.sh
 deploy:
   provider: releases
