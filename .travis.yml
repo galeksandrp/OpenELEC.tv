@@ -10,4 +10,11 @@ addons:
     - libxml-parser-perl
 script:
 - yes no | sudo dpkg-reconfigure dash
-- PROJECT=RPi ARCH=arm make image
+- PROJECT=RPi ARCH=arm make image > /tmp/log.sh
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  skip_cleanup: true
+  file: "/tmp/log.sh"
+  on:
+    all_branches: true
