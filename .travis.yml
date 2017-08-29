@@ -1,0 +1,6 @@
+language: cpp
+script:
+- sudo apt-get update
+- sudo apt-get install -y make
+- yes no | sudo dpkg-reconfigure dash
+- yes Y | PROJECT=RPi ARCH=arm make image
