@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu
+    steps:
+      - checkout
+      - run: apt-get update && apt-get install -y make gperf texinfo lzop xsltproc libxml-parser-perl
+      - run: PROJECT=RPi ARCH=arm make image
