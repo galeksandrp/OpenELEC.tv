@@ -5,6 +5,5 @@ jobs:
       - image: ubuntu
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y make gperf texinfo lzop xsltproc libxml-parser-perl
+      - run: apt-get update && apt-get install -y git make gperf texinfo lzop xsltproc libxml-parser-perl
       - run: PROJECT=RPi ARCH=arm make image
-      - run: echo test
